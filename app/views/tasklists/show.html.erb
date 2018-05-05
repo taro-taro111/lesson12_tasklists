@@ -1,0 +1,20 @@
+<h1>タスク詳細</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>id</th>
+    <td><%= @tasklist.id %></td>
+  </tr>
+  <tr>
+    <th>タスク名</th>
+    <td><%= @tasklist.status %></td>
+  </tr>
+  <tr>
+    <th>内容</th>
+    <td><%= @tasklist.content %></td>
+  </tr>
+
+</table>
+
+<%= link_to '編集する', edit_tasklist_path(@tasklist), class: 'btn btn-default btn-xs' %>
+<%= link_to "削除する", @tasklist, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" }, class: 'btn btn-danger btn-xs' %>

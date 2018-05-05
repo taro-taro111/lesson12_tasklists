@@ -9,10 +9,11 @@
           <%= link_to tasklist.user.name, user_path(tasklist.user) %> <span class="text-muted">posted at <%= tasklist.created_at %></span>
         </div>
         <div>
-          <p><%= tasklist.status %></p>
+          <p><%= link_to tasklist.status, tasklist %></p>
         </div>
         <div>
           <% if current_user == tasklist.user %>
+            <%= link_to '編集する', edit_tasklist_path(tasklist), class: 'btn btn-default btn-xs' %>
             <%= link_to "削除する", tasklist, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" }, class: 'btn btn-danger btn-xs' %>
           <% end %>
         </div>
